@@ -23,10 +23,23 @@ def hello_monkey():
 
     resp = twilio.twiml.Response()
     # Greet the caller by name
-    resp.say("Do you identify with Beyonce or Jay Z?")
+    resp.say("Do you identify with Beyonce-ay or Jay Z?")
     # Play an MP3
     resp.play("https://s3.amazonaws.com/yonce/upgradeu.mp3")
+    resp.record(maxLength="30", action="/handle-recording")
 
+    return str(resp)
+
+@app.route("/handle-recording", methods=['GET', 'POST'])
+def handle_recording():
+    """Play back the caller's recording."""
+ 
+    recording_url = request.values.get("RecordingUrl", None)
+ 
+    resp = twilio.twiml.Response()
+    resp.say("Thanks for howling... take a listen to what you howled.")
+    resp.play(recording_url)
+    resp.say("Goodbye.")
     return str(resp)
 
 if __name__ == "__main__":
