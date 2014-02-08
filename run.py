@@ -36,10 +36,10 @@ def hello_monkey():
     resp.say("Do you identify with Beyonce-ay or Jay Zeeeeeee?")
     # Play an MP3
     #resp.play("https://s3.amazonaws.com/yonce/upgradeu.mp3")
-    resp.record(maxLength="2", transcribeCallback="/transcribed" action="/handle-recording")
+  #  resp.record(maxLength="2", transcribeCallback="/transcribed" action="/handle-recording")
     return str(resp)
 
-
+'''
 @app.route("/handle-recording", methods=['GET', 'POST'])
 def handle_recording():
     """Play back the caller's recording."""
@@ -51,7 +51,7 @@ def handle_recording():
 @app.route("/transcribed", methods=['POST'])
 def transcribed():
  	request_data = json.loads(request.data)
-
+'''
 
 
 
