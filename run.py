@@ -44,9 +44,10 @@ def hello_monkey():
 def handle_recording():
     """Play back the caller's recording."""
  	#transcription = request_data.transcription_text
-	resp = twilio.twiml.Response()
+	
 	#resp.say(transcription)
 	recording_url = request.values.get("RecordingUrl", None)
+	resp = twilio.twiml.Response()
 	resp.say(recording_url)
     return str(resp)
 '''
