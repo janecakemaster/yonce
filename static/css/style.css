@@ -1,10 +1,12 @@
 body {
 margin: auto;
-background-color: #118fa1;
+background-color: lightblue;
+text-align:center;
 }
 
 h1 {
+font-family: Verdana;
 font-weight: bold;
-font-size: 48pt;
-color: #ccc;
+font-size: 50pt;
+color: #fff;
 }
