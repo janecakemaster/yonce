@@ -26,7 +26,7 @@ def hello_monkey():
     resp.say("Do you identify with Beyonce-ay or Jay Zeeeee?")
     # Play an MP3
     #resp.play("https://s3.amazonaws.com/yonce/upgradeu.mp3")
-    resp.record(maxLength="2", transcribeCallback="/transcribed", action="/handle-recording")
+    resp.record(maxLength="2", transcribeCallback="/transcribed")
     return str(resp)
 
 
