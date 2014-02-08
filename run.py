@@ -43,6 +43,7 @@ def handle_key():
 
 @app.route("/pick-song", methods=['GET', 'POST'])
 def pick_song():
+    digit_pressed = request.values.get('Digits', None)
     if digit_pressed == "1":
         resp = twilio.twiml.Response()
         resp.say("something")
