@@ -34,7 +34,34 @@ def handle_key():
         return str(resp)
     elif digit_pressed == "2":
         resp = twilio.twiml.Response()
-        resp.play(bucket_url + songs[0] + ".mp3")
+        resp.play(bucket_url + songs[2] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "3":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[3] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "4":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[4] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "5":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[5] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "6":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[6] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "7":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[7] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "8":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[8] + ".mp3")
+    elif digit_pressed == "9":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[9] + ".mp3")
         return str(resp)
     else:
         return redirect("/")
