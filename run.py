@@ -4,7 +4,7 @@ from random import randint
 
 app = Flask(__name__)
 
-songs = ["misscarter", "womp", "ifiwereaboy", "memyselfandi", "irreplacable",
+songs = ["itsbey", "womp", "ifiwereaboy", "memyselfandi", "irreplaceable",
          "singleladies", "freakumdress", "diva", "runtheworld", "flawless"]
 bucket_url = "https://s3.amazonaws.com/yonce/"
 
@@ -14,6 +14,7 @@ def start_call():
     """Welcome caller and present menu of songs."""
 
     resp = twilio.twiml.Response()
+    resp.play(bucket_url + songs[0] + ".mp3")
     resp.say("Who's the better half: Beyonsay or Jay zee?")
     with resp.gather(numDigits=1, action="/handle-key", method="POST") as g:
         g.say("""Press 1 for Beyonce-ay.
@@ -50,8 +51,35 @@ def pick_song():
         resp = twilio.twiml.Response()
         resp.play(bucket_url + songs[2] + ".mp3")
         return str(resp)
-
-    return str(resp)
+    elif digit_pressed == "3":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[3] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "4":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[4] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "5":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[5] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "6":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[6] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "7":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[7] + ".mp3")
+        return str(resp)
+    elif digit_pressed == "8":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[8] + ".mp3")
+    elif digit_pressed == "9":
+        resp = twilio.twiml.Response()
+        resp.play(bucket_url + songs[9] + ".mp3")
+        return str(resp)
+    else:
+        return redirect("/")
 
 
 if __name__ == "__main__":
