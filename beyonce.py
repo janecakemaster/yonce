@@ -1,6 +1,7 @@
 from nltk.corpus import wordnet as wn
 import twilio.twiml
 
+
 def synonym_lists(key_word):
     #where lovelife = string describing caller's love life
     mergedlist = []
@@ -10,11 +11,12 @@ def synonym_lists(key_word):
         for sim in ss.similar_tos():
             syns = [n.replace('_', ' ') for n in ss.lemma_names]
             syns += [n.replace('_', ' ') for n in sim.lemma_names]
-            #combine similar words into one list 
+            #combine similar words into one list
             mergedlist = mergedlist + syns
             #convert list to a set to remove duplicates
             merged_set = set(mergedlist)
     return merged_set
+
 
 def find_song(answer):
     #key_words
@@ -31,6 +33,7 @@ def find_song(answer):
                 print("You should play " + key)
                 song = key
     play_bey(song)
+
 
 def play_bey(song_title):
     resp = twilio.twiml.Response()
