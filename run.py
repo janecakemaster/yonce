@@ -23,7 +23,7 @@ def hello_monkey():
 
     resp = twilio.twiml.Response()
     # Greet the caller by name
-    resp.say("Hello " + caller)
+    resp.say("Do you identify with Beyonce or Jay Z?")
     # Play an MP3
     resp.play("https://s3.amazonaws.com/yonce/upgradeu.mp3")
 
