@@ -54,7 +54,7 @@ def transcribed():
  	transcription = request_data["TranscriptionText"]
 	resp = twilio.twiml.Response()
 	resp.say(transcription)
-	return str(resp)
+	#return str(resp)
 
 
 
