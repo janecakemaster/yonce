@@ -40,9 +40,9 @@ def hello_monkey():
     return str(resp)
 
 
-@app.route("/handle-recording", methods=['GET', 'POST'])
+@app.route("/handle-recording", methods=['GET'])
 def handle_recording():
- 	transcription = request_data("transcription_text", None)
+ 	transcription = request_data["transcription_text"]
 	print transcription
 	resp.say(transcription)
 	resp = twilio.twiml.Response()
