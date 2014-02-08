@@ -54,5 +54,19 @@ def pick_song():
     return str(resp)
 
 
+@app.route("/transcribed", methods=['POST'])
+def transcribed():
+    resp = twilio.twiml.Response()
+    resp.say("It's in the transcribed")
+    '''RecordingUrl = self.request.get("RecordingUrl")
+    TranscriptionStatus = self.request.get("TranscriptionStatus")
+    Caller = self.request.get("Caller")
+    TranscriptionText = self.request.get("TranscriptionText")
+    request_data = json.loads(request.data)
+    transcription = request_data["TranscriptionText"]
+    resp = twilio.twiml.Response()
+    resp.say(transcription)'''
+    #return str(resp)
+
 if __name__ == "__main__":
     app.run(debug=True)
