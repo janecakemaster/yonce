@@ -5,8 +5,7 @@ from random import randint
 app = Flask(__name__)
 
 songs = ["itsbey", "womp", "ifiwereaboy", "memyselfandi", "irreplaceable",
-         "singleladies", "freakumdress", "diva", "runtheworld", "flawless",
-         "bonus", "mscarter"]
+         "singleladies", "freakumdress", "diva", "runtheworld", "flawless", "bonus", "mscarter"]
 bucket_url = "https://s3.amazonaws.com/yonce/"
 
 
@@ -36,7 +35,7 @@ def handle_key():
         return str(resp)
     elif digit_pressed == "2":
         resp = twilio.twiml.Response()
-        resp.play(bucket_url + songs[11] + ".mp3")
+        resp.play(bucket_url + songs[0] + ".mp3")
         return str(resp)
     else:
         return redirect("/")
