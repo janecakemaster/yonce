@@ -1,10 +1,8 @@
 from flask import Flask, request, redirect
 import twilio.twiml
-from rdio import Rdio
 
 app = Flask(__name__)
 
-rdio = Rdio(("jxd3ma99xyzd52nkq88rsyp8", "94xBwq3Pkz"))
 
 # Try adding your own number to this list!
 callers = {
@@ -32,15 +30,6 @@ def hello_monkey():
     resp.record(maxLength="30", action="/handle-recording")
 
     return str(resp)
-
-
-@app.route("/play", methods=['GET', 'POST'])
-def play_rdio():
-    ian = rdio.call("findUser", {"vanityName": "ian"})
-    if (ian["status"] == "ok"):
-        return str(ian["result"]["lastName"])
-    else:
-        return str("ERROR: " + ian["message"])
 
 
 @app.route("/handle-recording", methods=['GET', 'POST'])
