@@ -1,12 +1,27 @@
 body {
-margin: auto;
-background-color: lightblue;
-text-align:center;
+	margin: auto;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1 {
-font-family: Verdana;
-font-weight: bold;
-font-size: 50pt;
-color: #fff;
+	z-index: 9999;
+	margin-top: 0;
+	color: #E7BAD3;
+	font-weight: 100;
+	font-size: 1.5em;
+}
+
+h2 {
+	z-index: 9999;
+	margin-top: -4em;
+	margin-bottom: 0;
+	font-weight: 100;
+	font-size: 1em;
+}
+img {
+	margin-top: -2em;
 }
