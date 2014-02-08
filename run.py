@@ -45,7 +45,8 @@ def handle_key():
 def pick_song():
     if digit_pressed == "1":
         resp = twilio.twiml.Response()
-        resp.play(bucket_url + songs[1] + ".mp3")
+        resp.say("something")
+        # resp.play(bucket_url + songs[1] + ".mp3")
         return str(resp)
     elif digit_pressed == "2":
         resp = twilio.twiml.Response()
