@@ -36,23 +36,25 @@ def hello_monkey():
     resp.say("Do you identify with Beyonce-ay or Jay Zeeeeeee?")
     # Play an MP3
     #resp.play("https://s3.amazonaws.com/yonce/upgradeu.mp3")
-    resp.record(maxLength="2", transcribeCallback="/transcribed", action="/handle-recording")
+    resp.record(maxLength="2", '''transcribeCallback="/transcribed",''' action="/handle-recording")
     return str(resp)
 
 
 @app.route("/handle-recording", methods=['GET', 'POST'])
 def handle_recording():
     """Play back the caller's recording."""
- 	transcription = request_data.transcription_text
+ 	#transcription = request_data.transcription_text
 	resp = twilio.twiml.Response()
-	resp.say(transcription)
+	#resp.say(transcription)
+	recording_url = request.values.get("RecordingUrl", None)
+	resp.say(recording_url)
     return str(resp)
-
+'''
 @app.route("/transcribed", methods=['POST'])
 def transcribed():
  	request_data = json.loads(request.data)
 
-
+'''
 
 
 if __name__ == "__main__":
