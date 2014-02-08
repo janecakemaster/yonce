@@ -20,7 +20,9 @@ def start_call():
     with resp.gather(numDigits=1, action="/handle-key", method="POST") as g:
         g.say("""Press 1 for Beyonce-ay.
                  Press 2 for Jay zee.""")
-    return render_template("template.html")
+    render_template("template.html")
+    return str(resp)
+
 
 @app.route("/handle-key", methods=['GET', 'POST'])
 def handle_key():
