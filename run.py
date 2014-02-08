@@ -50,10 +50,16 @@ def handle_recording():
 
 @app.route("/transcribed", methods=['POST'])
 def transcribed():
+	resp = twilio.twiml.Response()
+	resp.say("It's in the transcribed")
+	'''RecordingUrl = self.request.get("RecordingUrl")
+	TranscriptionStatus = self.request.get("TranscriptionStatus")
+	Caller = self.request.get("Caller")
+	TranscriptionText = self.request.get("TranscriptionText")
  	request_data = json.loads(request.data)
  	transcription = request_data["TranscriptionText"]
 	resp = twilio.twiml.Response()
-	resp.say(transcription)
+	resp.say(transcription)'''
 	#return str(resp)
 
 
