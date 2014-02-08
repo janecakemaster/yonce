@@ -80,6 +80,7 @@ def pick_song():
     elif digit_pressed == "8":
         resp = twilio.twiml.Response()
         resp.play(bucket_url + songs[8] + ".mp3")
+        return str(resp)
     elif digit_pressed == "9":
         resp = twilio.twiml.Response()
         resp.play(bucket_url + songs[9] + ".mp3")
