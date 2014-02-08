@@ -25,7 +25,7 @@ def hello_monkey():
     # Greet the caller by name
     resp.say("Hello " + caller)
     # Play an MP3
-    resp.play("songs/singleladies.mp3")
+    resp.play("mp3/singleladies.mp3")
 
     return str(resp)
 
