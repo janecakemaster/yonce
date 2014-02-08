@@ -1,6 +1,10 @@
 *.py[cod]
 .DS_Store
+.Python
+include/
+venv/
 
+#
 # C extensions
 *.so
 
