@@ -11,6 +11,11 @@ bucket_url = "https://s3.amazonaws.com/yonce/"
 
 
 @app.route("/", methods=['GET', 'POST'])
+def main():
+    return render_template("template.html")
+
+
+@app.route("/twilio", methods=['GET', 'POST'])
 def start_call():
     """Welcome caller and present menu of songs."""
 
@@ -20,7 +25,6 @@ def start_call():
     with resp.gather(numDigits=1, action="/handle-key", method="POST") as g:
         g.say("""Press 1 for Beyonce-ay.
                  Press 2 for Jay zee.""")
-    render_template("template.html")
     return str(resp)
 
 
