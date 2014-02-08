@@ -33,7 +33,7 @@ def hello_monkey():
 
     resp = twilio.twiml.Response()
     # Greet the caller by name
-    resp.say("Do you identify with Beyonce-ay or Jay Zeeeeeee?")
+    resp.say("Do you identify with Beyonce-ay or Jay Zeeeee?")
     # Play an MP3
     #resp.play("https://s3.amazonaws.com/yonce/upgradeu.mp3")
     resp.record(maxLength="2", transcribeCallback="/transcribed",  action="/handle-recording")
@@ -44,7 +44,6 @@ def hello_monkey():
 def handle_recording():
  	transcription = request_data["transcription_text"]
 	print transcription
-	resp.say(transcription)
 	resp = twilio.twiml.Response()
 	resp.say(transcription)
 	return str(resp)
