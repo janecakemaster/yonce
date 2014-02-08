@@ -5,11 +5,14 @@ from twilio.rest import TwilioRestClient
 app = Flask(__name__)
 
 
+<<<<<<< HEAD
 account_sid = "ACd7e41c537e6666301b0318d0d4c7b927"
 auth_token  = "1ff12b5965e927f8267ff451fff8687d"
 client = TwilioRestClient(account_sid, auth_token)
  
 
+=======
+>>>>>>> 49fa5eed2a974804a1651e7dd21fd0616a6553c0
 # Try adding your own number to this list!
 callers = {
     "+12014463242": "Jane",
@@ -45,13 +48,10 @@ def handle_recording():
  	transcription = client.transcriptions.get("TR8c61027b709ffb038236612dc5af8723")
 	resp = twilio.twiml.Response()
 	resp.say(resptranscription.transcription_text)
- '''   recording_url = request.values.get("RecordingUrl", None)
+# recording_url = request.values.get("RecordingUrl", None)
  
-    resp = twilio.twiml.Response()
-    resp.say("Thanks for howling... take a listen to what you howled.")
-    resp.play(recording_url)
-    resp.say("Goodbye.")'''
     return str(resp)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
