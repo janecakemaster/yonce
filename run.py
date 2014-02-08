@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, render_template
 import twilio.twiml
 from random import randint
 
@@ -11,6 +11,9 @@ bucket_url = "https://s3.amazonaws.com/yonce/"
 
 
 @app.route("/", methods=['GET', 'POST'])
+def main():
+    return render_template("template.html")
+
 def start_call():
     """Welcome caller and present menu of songs."""
 
